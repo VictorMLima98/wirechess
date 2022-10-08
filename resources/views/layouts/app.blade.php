@@ -6,6 +6,7 @@
 </head>
 
 <body>
-    <livewire:home />
+    {{ $slot }}
+
     @livewireScripts
 </body>

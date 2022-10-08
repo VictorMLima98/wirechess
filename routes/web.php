@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\Home;
+use App\Http\Livewire\Chess;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', Home::class)->name('home');
+Route::get('/', Chess::class)->name('home');
