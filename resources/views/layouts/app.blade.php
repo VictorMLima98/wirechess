@@ -6,6 +6,6 @@
 </head>
 
 <body>
-
+    <livewire:home />
     @livewireScripts
 </body>
