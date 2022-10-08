@@ -8,7 +8,7 @@ module.exports = {
     safelist: [
         'text-black',
         'text-white',
-        'bg-black',
+        'bg-gray-500',
         'bg-white',
         'hover:bg-black/50',
         'hover:bg-white/50'
