@@ -20,23 +20,17 @@ class Chess extends Component implements ChessTable
         for ($i = 1; $i <= self::ROWS; $i++) {
             for ($j = 1; $j <= self::COLUMNS; $j++) {
                 $bgColor = "bg-black";
+                $hoverBgColor = "hover:bg-black/50";
+                $textColor = "text-white";
 
                 $shouldBeWhite = ($this->even($i) && $this->even($j))
                     || (!$this->even($i) && !$this->even($j));
 
                 if ($shouldBeWhite) {
                     $bgColor = "bg-white";
+                    $hoverBgColor = "hover:bg-white/50";
+                    $textColor = "text-black";
                 }
-
-                $hoverBgColor = match ($bgColor) {
-                    'bg-white' => 'hover:bg-white/50',
-                    'bg-black' => 'hover:bg-black/50'
-                };
-
-                $textColor = match ($bgColor) {
-                    'bg-white' => 'text-black',
-                    'bg-black' => 'text-white'
-                };
 
                 $this->table[] = [
                     'bgColor' => $bgColor,
