@@ -11,6 +11,10 @@ class Chess extends Component implements ChessTable, ChessPieces
 {
     use HasChessTable;
 
+    public bool $canSelectSquare = false;
+
+    public array $coordinateSelected = [];
+
     public function mount(): void
     {
         $this->setChessTable();
@@ -33,7 +37,7 @@ class Chess extends Component implements ChessTable, ChessPieces
                     $textColor = "text-black";
                 }
 
-                $this->table[] = [
+                $this->table["{$j} {$i}"] = [
                     'bgColor' => $bgColor,
                     'hoverBgColor' => $hoverBgColor,
                     'textColor' => $textColor,
@@ -84,6 +88,12 @@ class Chess extends Component implements ChessTable, ChessPieces
             }
         }
         return false;
+    }
+
+    public function selectCoordinate(string $coordinate): void
+    {
+        $this->coordinateSelected = explode(" ", $coordinate);
+        dd($this->coordinateSelected);
     }
 
     public function render()
